@@ -18,17 +18,27 @@ Also handles generic error messages — just throw anything at it.
 ## Get started
 
 ```sh
+# option A: go install (recommended)
+go install github.com/diaoyulao9657/stackfix@latest
+
+# option B: build from source
 git clone https://github.com/diaoyulao9657/stackfix
 cd stackfix
 go build -o stackfix .
 mv stackfix /usr/local/bin/   # or anywhere in your PATH
-
-mkdir -p ~/.config/stackfix
-cp .env.example ~/.config/stackfix/.env
-# add your API key to ~/.config/stackfix/.env
 ```
 
-Requires Go 1.22+ to build. Zero external dependencies.
+Then configure your API key:
+
+```sh
+mkdir -p ~/.config/stackfix
+cat > ~/.config/stackfix/.env << 'EOF'
+BASE_URL=https://api.tokenmix.ai/v1
+API_KEY=your-api-key-here
+EOF
+```
+
+Requires Go 1.22+. Zero external dependencies.
 
 You need an API key from any OpenAI-compatible provider. Default config
 points to [TokenMix.ai](https://tokenmix.ai) (155+ models, $1 free credit) —

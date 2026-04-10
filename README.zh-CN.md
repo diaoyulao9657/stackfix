@@ -18,17 +18,27 @@ PyTorch 尝试分配 3.2GB 但设备上只剩 1.1GB。
 ## 快速开始
 
 ```sh
+# 方式一：go install（推荐）
+go install github.com/diaoyulao9657/stackfix@latest
+
+# 方式二：从源码编译
 git clone https://github.com/diaoyulao9657/stackfix
 cd stackfix
 go build -o stackfix .
-mv stackfix /usr/local/bin/   # 或者放到 PATH 里的任何位置
-
-mkdir -p ~/.config/stackfix
-cp .env.example ~/.config/stackfix/.env
-# 在 ~/.config/stackfix/.env 里填入你的 API key
+mv stackfix /usr/local/bin/
 ```
 
-编译需要 Go 1.22+，零外部依赖。
+然后配置 API key：
+
+```sh
+mkdir -p ~/.config/stackfix
+cat > ~/.config/stackfix/.env << 'EOF'
+BASE_URL=https://api.tokenmix.ai/v1
+API_KEY=your-api-key-here
+EOF
+```
+
+需要 Go 1.22+，零外部依赖。
 
 需要一个 OpenAI 兼容 API 的 key。默认配置指向 [TokenMix.ai](https://tokenmix.ai)（155+ 模型，新用户送 $1）——改 `.env` 里的 `BASE_URL` 就能切到别的服务商。
 
