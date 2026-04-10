@@ -18,7 +18,7 @@ Also handles generic error messages — just throw anything at it.
 ## Get started
 
 ```sh
-git clone https://github.com/yourusername/stackfix
+git clone https://github.com/diaoyulao9657/stackfix
 cd stackfix
 go build -o stackfix .
 mv stackfix /usr/local/bin/   # or anywhere in your PATH

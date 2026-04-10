@@ -18,7 +18,7 @@ PyTorch 尝试分配 3.2GB 但设备上只剩 1.1GB。
 ## 快速开始
 
 ```sh
-git clone https://github.com/yourusername/stackfix
+git clone https://github.com/diaoyulao9657/stackfix
 cd stackfix
 go build -o stackfix .
 mv stackfix /usr/local/bin/   # 或者放到 PATH 里的任何位置
